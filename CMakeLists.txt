@@ -5,11 +5,9 @@ project(SQLite3
     LANGUAGES C)
 
 find_package(Threads)
-include(CMakeDependentOption)
 
 # Options
-cmake_dependent_option(SQLITE3_THREADSAFE "Enable multithread sqlite access" ON
-    "NOT Threads_FOUND" OFF)
+option(SQLITE3_THREADSAFE "Enable multithread sqlite access" ON)
 
 # Library
 add_library(sqlite3)
