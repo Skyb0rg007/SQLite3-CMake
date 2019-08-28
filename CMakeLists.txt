@@ -17,6 +17,9 @@ target_sources(sqlite3
 target_include_directories(sqlite3
     PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+target_link_libraries(sqlite3
+    PRIVATE
+    ${CMAKE_DL_LIBS})
 set_target_properties(sqlite3 PROPERTIES
     OUTPUT_NAME sqlite3
     VERSION ${PROJECT_VERSION})
